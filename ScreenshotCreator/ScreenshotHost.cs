@@ -23,12 +23,15 @@ namespace ScreenshotCreator
 
         private Point p1, p2;
 
+        private bool isDrawing;
+
         public Bitmap GetScreenshot()
         {
             frame = new()
             {
                 BackColor = Color.Yellow,
                 BorderStyle = BorderStyle.FixedSingle,
+                Size = new Size(0,0),
                 Visible = false
             };
             Rectangle DispRect = new();
@@ -55,7 +58,8 @@ namespace ScreenshotCreator
             screenshotHost.MouseDown += ScreenshotHost_MouseDown;
             screenshotHost.MouseMove += ScreenshotHost_MouseMove;
             screenshotHost.MouseUp += ScreenshotHost_MouseUp;
-            screenshotHost.KeyUp += ScreenshotHost_KeyUp; ;
+            screenshotHost.KeyUp += ScreenshotHost_KeyUp;
+            screenshotHost.Activated += (_, _) => screenshotHost.Focus();
 
             if (screenshotHost.ShowDialog() == DialogResult.OK)
             {
@@ -92,12 +96,16 @@ namespace ScreenshotCreator
 
         private void ScreenshotHost_MouseDown(object sender, MouseEventArgs e)
         {
-            frame.Visible = true;
+            frame.Location = e.Location;
             p1 = e.Location;
+            p2 = e.Location;
+            frame.Visible = true;
+            isDrawing = true;
         }
 
         private void ScreenshotHost_MouseMove(object sender, MouseEventArgs e)
         {
+            if (!isDrawing) return;
             p2 = e.Location;
             frame.Location = new Point(Math.Min(p1.X, p2.X), Math.Min(p1.Y, p2.Y));
             frame.Size = new Size(Math.Max(p1.X, p2.X) - frame.Location.X, Math.Max(p1.Y, p2.Y) - frame.Location.Y);
