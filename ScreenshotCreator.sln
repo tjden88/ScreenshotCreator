@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31112.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScreenshotCreator", "ScreenshotCreator\ScreenshotCreator.csproj", "{64625730-5DEB-4F07-8432-5050DD181D80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestWinForms", "TestWinForms\TestWinForms.csproj", "{D708EBE6-4FC5-46BE-A5A7-A56EED6B7D63}"
+	ProjectSection(ProjectDependencies) = postProject
+		{64625730-5DEB-4F07-8432-5050DD181D80} = {64625730-5DEB-4F07-8432-5050DD181D80}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{64625730-5DEB-4F07-8432-5050DD181D80}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{64625730-5DEB-4F07-8432-5050DD181D80}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{64625730-5DEB-4F07-8432-5050DD181D80}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{64625730-5DEB-4F07-8432-5050DD181D80}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D708EBE6-4FC5-46BE-A5A7-A56EED6B7D63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D708EBE6-4FC5-46BE-A5A7-A56EED6B7D63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D708EBE6-4FC5-46BE-A5A7-A56EED6B7D63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D708EBE6-4FC5-46BE-A5A7-A56EED6B7D63}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5707E6E8-2DDD-4754-8E16-B9DDA5FDB1D8}
+	EndGlobalSection
+EndGlobal
